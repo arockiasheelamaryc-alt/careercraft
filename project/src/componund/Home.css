@@ -1,0 +1,223 @@
+/* Home.css - Professional Styling for CareerCraft Home Page */
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #1e1b4b 100%);
+  color: #f3f4f6;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-nav-logo {
+  font-size: 1.45rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+}
+
+.home-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.home-nav-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.home-nav-link:hover {
+  color: #ffffff;
+}
+
+.home-login-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-login-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.home-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.home-card {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  width: 100%;
+  background: rgba(17, 24, 39, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  animation: homeCardFadeIn 0.7s ease-out;
+}
+
+@keyframes homeCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+.home-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.15;
+  background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-subtitle {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  margin: 0 0 1rem 0;
+}
+
+.home-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0 auto 2.25rem auto;
+  max-width: 500px;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.95rem 2.5rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 4px 10px -3px rgba(124, 58, 237, 0.3);
+  transition: all 0.25s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.5), 0 8px 15px -3px rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+}
+
+.home-btn:active {
+  transform: translateY(0);
+}
+
+.home-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.home-feature-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.home-feature-desc {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+@media (max-width: 640px) {
+  .home-title {
+    font-size: 2.4rem;
+  }
+  .home-card {
+    padding: 2.25rem 1.5rem;
+  }
+  .home-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .home-nav {
+    padding: 1rem 1.25rem;
+  }
+  .home-nav-links {
+    gap: 0.75rem;
+  }
+}

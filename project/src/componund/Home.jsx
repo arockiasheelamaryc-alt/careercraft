@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,8 +28,8 @@ export default function Home(){
           <h1 className="main">Build your career with Career Craft</h1>
           <p className="find">Find the right job, explore career opportunities,<br/>and build a successful future.</p>
           <div className="button">
-            <a href="#"><button className="but">Expolore jobs</button></a>
-           <a href="#"> <button className="ton">Start your career</button></a>
+            <a href="/jobs"><button className="but">Expolore jobs</button></a>
+           <a href="/learning-path"> <button className="ton">Start your career</button></a>
            <h2>Start  Your Career Journey Today</h2>
            <p className="para"><bold>Discover the right career path, develop the skills you need, prepare for interviews,
 

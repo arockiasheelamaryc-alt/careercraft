@@ -172,7 +172,10 @@ return (
 
             <button
               className="success-btn"
-              onClick={() => setSuccess(false)}
+              onClick={() => {
+                setSuccess(false);
+                Navigate("/jobs");
+              }}
             >
               Continue to CareerCraft
             </button>
