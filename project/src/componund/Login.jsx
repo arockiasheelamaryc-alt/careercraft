@@ -3,16 +3,16 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 
 
-export default function login() {
+export default function Login() {
   const Navigate=useNavigate();
-
-function Register() {
-
+  
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("Student");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleName = (e) => {
     const value = e.target.value;
@@ -25,7 +25,7 @@ function Register() {
   const handlePhone = (e) => {
     const value = e.target.value;
 
-    if (/^\d*$/.test(value) && value.length <= 10) {
+    if (/^[0-9]*$/.test(value)) {
       setPhone(value);
     }
   };
@@ -38,110 +38,152 @@ function Register() {
       return;
     }
 
-    alert("Registration Successful!");
+    if (phone.length !== 10) {
+      alert("Please enter a valid 10-digit phone number");
+      return;
+    }
+
+    setSuccess(true);
   };
-  return (
-    <div>
-      <h2>CareerCraft Registration</h2>
-      <p>Student / Fresher Registration</p>
 
-      <form onSubmit={handleSubmit}>
+return (
+  <div className="signup-page">
 
-        <label>Full Name</label>
-        <br />
-        <input
-          type="text"
-          value={name}
-          onChange={handleName}
-          placeholder="Enter your name"
-          required
-        />
+      <div className="signup-shape">
 
-        <br /><br />
+        {!success ? (
+          <>
+            <div className="signup-heading">
+              <span>CareerCraft</span>
+              <h1>Create Your Account</h1>
+              <p>Start building your career journey with us</p>
+            </div>
 
-        <label>Phone Number</label>
-        <br />
-        <input
-          type="text"
-          value={phone}
-          onChange={handlePhone}
-          placeholder="Enter 10 digit number"
-          required
-        />
+            <form onSubmit={handleSubmit}>
 
-        <br /><br />
+              <div className="input-row">
 
-        <label>Email</label>
-        <br />
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          required
-        />
+                <div className="input-group">
+                  <label>Full Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={handleName}
+                    required
+                  />
+                </div>
 
-        <br /><br />
+                <div className="input-group">
+                  <label>Phone Number</label>
+                  <input
+                    type="text"
+                    placeholder="10-digit number"
+                    value={phone}
+                    onChange={handlePhone}
+                    maxLength="10"
+                    required
+                  />
+                </div>
 
-        <label>Qualification</label>
-        <br />
-        <select required>
-          <option value="">Select Qualification</option>
-          <option>B.E</option>
-          <option>B.Tech</option>
-          <option>B.Sc</option>
-          <option>BCA</option>
-          <option>MCA</option>
-          <option>M.E</option>
-          <option>Other</option>
-        </select>
+              </div>
 
-        <br /><br />
+              <div className="input-group">
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
 
-        <label>Experience</label>
-        <br />
-        <select required>
-          <option value="">Select</option>
-          <option>Fresher</option>
-          <option>Student</option>
-          <option>Experienced</option>
-        </select>
+              <div className="input-group">
+                <label>You are</label>
 
-        <br /><br />
+                <select
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value)}
+                >
+                  <option>Student</option>
+                  <option>Fresher</option>
+                  <option>Job Seeker</option>
+                  <option>Professional</option>
+                  <option>others</option>
+                </select>
+              </div>
 
-        <label>Password</label>
-        <br />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter password"
-          required
-        />
+              <div className="input-row">
 
-        <br /><br />
+                <div className="input-group">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    placeholder="Create password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </div>
 
-        <label>Confirm Password</label>
-        <br />
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Confirm password"
-          required
-        />
+                <div className="input-group">
+                  <label>Confirm Password</label>
+                  <input
+                    type="password"
+                    placeholder="Confirm password"
+                    value={confirmPassword}
+                    onChange={(e) =>
+                      setConfirmPassword(e.target.value)
+                    }
+                    required
+                  />
+                </div>
 
-        <br /><br />
+              </div>
 
-        <button type="submit">Register</button>
+              <button className="signup-btn" type="submit">
+                Sign Up
+              </button>
 
-      </form>
+              <p className="login-text">
+                Already have an account? <b>Login</b>
+              </p>
+
+            </form>
+          </>
+        ) : (
+
+          <div className="success-content">
+
+            <div className="success-icon">✓</div>
+
+            <h1>Registration Successful!</h1>
+
+            <p>
+              Welcome to CareerCraft, <strong>{name}</strong>!
+            </p>
+
+            <p className="success-message">
+              Your account has been created successfully.
+              <br />
+              Start exploring your career opportunities.
+            </p>
+
+            <button
+              className="success-btn"
+              onClick={() => setSuccess(false)}
+            >
+              Continue to CareerCraft
+            </button>
+
+          </div>
+
+        )}
+
+      </div>
+
     </div>
-
-  
-    
   );
-}
-
 }
 
