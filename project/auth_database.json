@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": "admin_1791382830150",
+      "name": "Director Evans",
+      "email": "admin.test@careercraft.org",
+      "role": "admin",
+      "phone": "",
+      "statusLevel": "Administrator",
+      "designation": "Academic Director",
+      "salt": "034783119a080b73e31336c2075165fc",
+      "hash": "a47424e91cb9f7af6e71c5891aba3837cfc88bb07e990d04822cf6bc98a58948a0874bfe5435f289b032d2f35e30573d4f8c061e54d02926c7e54e41191bd87d",
+      "createdAt": "2026-10-07T14:20:30.150Z",
+      "status": "Active"
+    },
+    {
+      "id": "admin_1791383304359",
+      "name": "sheela",
+      "email": "bvhgftd@gmail.com",
+      "role": "admin",
+      "phone": "",
+      "statusLevel": "Administrator",
+      "designation": "System Administrator",
+      "salt": "086861aeced9512cc8a045353a8da5bc",
+      "hash": "893f00028e4ee9aa8b1c43bea9db17477442f155349543bd3a74b25029da7070b9224a1cb80f1ddc6c97ba790d5d2603008d32bb34029a47076117626a7bb04b",
+      "createdAt": "2026-10-07T14:28:24.359Z",
+      "status": "Active"
+    }
+  ],
+  "tokens": {
+    "cctoken_1aece026e673c6a9d88ca57aa6cf86f11c1fec31a9e315d18f6966ad4d2584bf": {
+      "userId": "student_1",
+      "email": "student@careercraft.com",
+      "role": "student",
+      "name": "Demo Student",
+      "expiresAt": 1791466837039
+    },
+    "cctoken_a788930d472a91ec4118c8ac81ccda86ea5dd5bd244521aea7f94bd6a4b06cda": {
+      "userId": "student_1791380464241",
+      "email": "priya.student@college.edu",
+      "role": "student",
+      "name": "Priya Sharma",
+      "expiresAt": 1791466864243
+    },
+    "cctoken_dca2201bbad354b4f5bcd186ffa3964d197589213e2489bb60f29299ede080fa": {
+      "userId": "student_1",
+      "email": "student@careercraft.com",
+      "role": "student",
+      "name": "Demo Student",
+      "expiresAt": 1791466953758
+    },
+    "cctoken_f2e5f8d3905e7626d40dd4e32a4e892acb1b89afd0748e777a569ec5e31658aa": {
+      "userId": "student_1791381325826",
+      "email": "sheela@gmail.com",
+      "role": "student",
+      "name": "sheela",
+      "expiresAt": 1791467725828
+    },
+    "cctoken_26b37498cf9a2851a653619bde0960e765bf3aeacf664d25626d22a7e8f9123b": {
+      "userId": "admin_1791382830150",
+      "email": "admin.test@careercraft.org",
+      "role": "admin",
+      "name": "Director Evans",
+      "designation": "Academic Director",
+      "expiresAt": 1791469230153
+    },
+    "cctoken_1805f85dba5c1ac87b41962aeb40501ac582c2f20f8a22332a0ee67a5747efe1": {
+      "userId": "admin_1791382830150",
+      "email": "admin.test@careercraft.org",
+      "role": "admin",
+      "name": "Director Evans",
+      "designation": "Academic Director",
+      "expiresAt": 1791469259004
+    },
+    "cctoken_1f1c2f37f9ca64218a69db9e748f9a100e8bdf768209a2a42f670857ae2e19c2": {
+      "userId": "admin_1791382830150",
+      "email": "admin.test@careercraft.org",
+      "role": "admin",
+      "name": "Director Evans",
+      "designation": "Academic Director",
+      "expiresAt": 1791469417082
+    },
+    "cctoken_ae52462c43df45ecb40600ec8df206c217690e019a519d434fee37851cce3d63": {
+      "userId": "admin_1791383304359",
+      "email": "bvhgftd@gmail.com",
+      "role": "admin",
+      "name": "sheela",
+      "designation": "System Administrator",
+      "expiresAt": 1791469903831
+    }
+  }
+}

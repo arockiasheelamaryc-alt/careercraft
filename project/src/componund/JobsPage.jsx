@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { itCategories } from "../data/categoriesData";
+import itCategoriesBg from "./it-categories-bg.jpg";
 import "./careercraft.css";
 
 export default function JobsPage() {
@@ -20,26 +21,49 @@ export default function JobsPage() {
     <div className="cc-page-container">
       <Navbar />
 
-      <section className="cc-hero-banner">
-        <span className="cc-hero-badge">IT Career Exploration</span>
-        <h1 className="cc-hero-title">10 IT Job Categories</h1>
+      <section
+        className="cc-hero-banner"
+        style={{
+          backgroundImage: `url(${itCategoriesBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <span className="cc-hero-badge">IT Career Tracks</span>
+        <h1 className="cc-hero-title">IT Job Categories</h1>
         <p className="cc-hero-subtitle">
           Explore the 10 core IT career fields for college students and freshers.
-          Learn about job roles, required technical skills, technologies, and interview preparation.
+          Click any category below to access its dedicated Learning Page with topic-wise explanations and code examples.
         </p>
       </section>
 
       <main className="cc-main-content">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem", flexWrap: "wrap", gap: "1rem" }}>
-          <Link to="/" className="cc-back-btn" style={{ marginBottom: 0 }}>
-            ← Back to Home
-          </Link>
+          <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap" }}>
+            <Link to="/" className="cc-back-btn" style={{ marginBottom: 0 }}>
+              ← Back to Home
+            </Link>
+            <Link
+              to="/interview-questions"
+              className="cc-back-btn"
+              style={{
+                marginBottom: 0,
+                background: "#fdf2f8",
+                color: "#e0259b",
+                borderColor: "#fbcfe8",
+                fontWeight: 600
+              }}
+            >
+              🎯 Interview Questions (25 Qs Each) →
+            </Link>
+          </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span style={{ fontSize: "0.9rem", color: "var(--cc-text-muted)" }}>Search Careers:</span>
+            <span style={{ fontSize: "0.9rem", color: "var(--cc-text-muted)" }}>Search Categories:</span>
             <input
               type="text"
-              placeholder="e.g. React, Python, Cloud..."
+              placeholder="e.g. React, Python, Java..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{
@@ -54,9 +78,9 @@ export default function JobsPage() {
         </div>
 
         <div className="cc-section-header">
-          <h2 className="cc-section-title">Explore IT Careers for Freshers ({itCategories.length} Categories)</h2>
+          <h2 className="cc-section-title">Select an IT Category to Start Learning ({itCategories.length} Categories)</h2>
           <p className="cc-section-desc">
-            Select any IT career category below to see detailed beginner learning paths, required tools, practice tasks, and interview questions.
+            Students can study topic-wise concepts, see practical code examples, and practice interview questions for their chosen IT domain.
           </p>
         </div>
 
@@ -87,18 +111,21 @@ export default function JobsPage() {
                 </div>
               </div>
 
-              <div style={{ marginTop: "auto", display: "flex", gap: "0.5rem" }}>
+              <div style={{ marginTop: "auto", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                 <Link
                   to={`/jobs/${category.id}`}
                   className="cc-btn cc-btn-primary"
-                  style={{ flex: 1 }}
+                  style={{ flex: 1, textAlign: "center", minWidth: "140px" }}
                 >
-                  View Details / Learn More →
+                  Start Learning →
                 </Link>
+                
               </div>
             </div>
           ))}
         </div>
+            
+        
       </main>
 
       <Footer />

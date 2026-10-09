@@ -1,4 +1,4 @@
-// CareerCraft - 10 IT Job Categories Data
+// Career Craft - 10 IT Job Categories Data
 // Simple, beginner-friendly IT career information for college students and freshers
 
 export const itCategories = [

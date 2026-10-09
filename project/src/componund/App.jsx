@@ -1,58 +1,127 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
+
 import Home from "./Home";
 import Login from "./Login";
 import JobsPage from "./JobsPage";
-import JobDetailPage from "./JobDetailPage";
-import SkillDevelopment from "./SkillDevelopment";
 import LearningPath from "./LearningPath";
-import CodingPractice from "./CodingPractice";
-import PracticeQuestions from "./PracticeQuestions";
 import InterviewQuestions from "./InterviewQuestions";
-import InterviewPrep from "./InterviewPrep";
+import CodingPractice from "./CodingPractice";
 import CommunicationSkills from "./CommunicationSkills";
-import Jobserch from "./Jobserch";
-import Web_learn from "./Web_learn";
+import StudentDashboard from "./StudentDashboard";
+import AdminDashboard from "./AdminDashboard";
 
 function App() {
   return (
-    <Routes>
-      {/* Existing Home Page (Unchanged) */}
-      <Route path="/" element={<Home />} />
+    <AuthProvider>
+      <Routes>
+        {/* 1. Public Home Page */}
+        <Route path="/" element={<Home />} />
 
-      {/* Existing Login Page (Unchanged) */}
-      <Route path="/login" element={<Login />} />
+        {/* 2. Public Login & Sign Up */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Login />} />
 
-      {/* 10 IT Job Categories */}
-      <Route path="/jobs" element={<JobsPage />} />
-      <Route path="/jobs/:categoryId" element={<JobDetailPage />} />
+        {/* 3. Protected Student Dashboard */}
+        <Route
+          path="/student-dashboard"
+          element={
+            <ProtectedRoute requiredRole="student">
+              <StudentDashboard />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Skill Development Section */}
-      <Route path="/skills" element={<SkillDevelopment />} />
+        {/* 4. Protected Admin Dashboard (Admin Only) */}
+        <Route
+          path="/admin-dashboard"
+          element={
+            <ProtectedRoute requiredRole="admin">
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Student Learning Path */}
-      <Route path="/learning-path" element={<LearningPath />} />
+        {/* 5. Protected IT Job Categories */}
+        <Route
+          path="/jobs"
+          element={
+            <ProtectedRoute>
+              <JobsPage />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Coding / Practice Tools (HTML, CSS, JS with Run & Output) */}
-      <Route path="/coding-practice" element={<CodingPractice />} />
+        {/* 6. Protected Learning Path Feature */}
+        <Route
+          path="/jobs/:categoryId"
+          element={
+            <ProtectedRoute>
+              <LearningPath />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/learning"
+          element={
+            <ProtectedRoute>
+              <LearningPath />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/learning/:categoryId"
+          element={
+            <ProtectedRoute>
+              <LearningPath />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Exactly 25 Practice Questions Test */}
-      <Route path="/practice-questions" element={<PracticeQuestions />} />
+        {/* 7. Protected Interview Questions Feature (25 Qs) */}
+        <Route
+          path="/interview-questions"
+          element={
+            <ProtectedRoute>
+              <InterviewQuestions />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/interview-questions/:categoryId"
+          element={
+            <ProtectedRoute>
+              <InterviewQuestions />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Exactly 15 Technical Interview Questions */}
-      <Route path="/interview-questions" element={<InterviewQuestions />} />
+        {/* 8. Protected Coding Practice Feature */}
+        <Route
+          path="/coding-practice"
+          element={
+            <ProtectedRoute>
+              <CodingPractice />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Comprehensive IT Interview Preparation Guide */}
-      <Route path="/interview-prep" element={<InterviewPrep />} />
+        {/* 9. Protected Communication Skills Feature */}
+        <Route
+          path="/communication-skills"
+          element={
+            <ProtectedRoute>
+              <CommunicationSkills />
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Communication Skills for Interviews */}
-      <Route path="/communication-skills" element={<CommunicationSkills />} />
-
-      {/* Preserved existing routes */}
-      <Route path="/jobserch" element={<Jobserch />} />
-      <Route path="/web_learn" element={<Web_learn />} />
-      <Route path="/Web_learn/html pdf" element={<Web_learn />} />
-    </Routes>
+        {/* Fallback to Home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AuthProvider>
   );
 }
 

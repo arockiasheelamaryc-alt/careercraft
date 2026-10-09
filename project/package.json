@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/standalone": "^8.0.7",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-router-dom": "^6.30.6",
@@ -11,6 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

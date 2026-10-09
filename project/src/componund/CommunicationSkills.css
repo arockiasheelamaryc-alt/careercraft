@@ -1,0 +1,1081 @@
+/* ==========================================================================
+   Career Craft - Communication Skills Stylesheet
+   Comprehensive styling for Grammar, Vocabulary, Sentence Formation,
+   Reading, Writing, Speaking (Web Speech & Audio), and Workplace Communication
+   ========================================================================== */
+
+:root {
+  --cs-primary: #e0259b;
+  --cs-primary-hover: #c41c85;
+  --cs-primary-light: #fdf2f8;
+  --cs-secondary: #7c3aed;
+  --cs-secondary-hover: #6d28d9;
+  --cs-secondary-light: #f5f3ff;
+  --cs-accent: #059669;
+  --cs-accent-light: #ecfdf5;
+  --cs-warning: #d97706;
+  --cs-warning-light: #fffbeb;
+  --cs-danger: #dc2626;
+  --cs-danger-light: #fef2f2;
+  --cs-text-main: #0f172a;
+  --cs-text-body: #334155;
+  --cs-text-muted: #64748b;
+  --cs-bg: #f8fafc;
+  --cs-card-bg: #ffffff;
+  --cs-border: #e2e8f0;
+  --cs-radius: 14px;
+  --cs-radius-sm: 8px;
+  --cs-radius-pill: 9999px;
+  --cs-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --cs-shadow-md: 0 4px 14px -2px rgba(15, 23, 42, 0.07);
+  --cs-shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.1);
+}
+
+/* Page Container */
+.cs-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cs-bg);
+  color: var(--cs-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Main Content Wrapper */
+.cs-main-content {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 4rem;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+/* Hero Banner */
+.cs-hero-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+  color: #ffffff;
+  border-radius: var(--cs-radius);
+  padding: 2.25rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--cs-shadow-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.cs-hero-left {
+  max-width: 720px;
+}
+
+.cs-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(224, 37, 155, 0.2);
+  border: 1px solid rgba(244, 114, 182, 0.35);
+  color: #fbcfe8;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--cs-radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.85rem;
+}
+
+.cs-hero-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.cs-hero-title span {
+  background: linear-gradient(135deg, #f472b6, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cs-hero-subtitle {
+  font-size: 0.98rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.cs-hero-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cs-hero-stat-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--cs-radius-sm);
+  padding: 0.75rem 1.15rem;
+  text-align: center;
+  min-width: 100px;
+}
+
+.cs-hero-stat-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #f472b6;
+  display: block;
+}
+
+.cs-hero-stat-label {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Tabs Bar */
+.cs-tabs-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--cs-shadow-sm);
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.cs-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--cs-text-body);
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--cs-radius-pill);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cs-tab-btn:hover {
+  background: var(--cs-primary-light);
+  color: var(--cs-primary);
+}
+
+.cs-tab-btn.active {
+  background: linear-gradient(135deg, var(--cs-primary), var(--cs-secondary));
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(224, 37, 155, 0.3);
+}
+
+.cs-tab-icon {
+  font-size: 1.05rem;
+}
+
+/* Card Container Base */
+.cs-card {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--cs-shadow-sm);
+  margin-bottom: 1.5rem;
+}
+
+.cs-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--cs-border);
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cs-card-title-group h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem;
+  color: var(--cs-text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cs-card-title-group p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--cs-text-muted);
+}
+
+.cs-score-pill {
+  background: var(--cs-secondary-light);
+  border: 1px solid #ddd6fe;
+  color: var(--cs-secondary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--cs-radius-pill);
+}
+
+/* Sub-topic Filter Chips */
+.cs-filter-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cs-filter-chip {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--cs-radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cs-text-body);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cs-filter-chip:hover {
+  border-color: var(--cs-primary);
+  color: var(--cs-primary);
+}
+
+.cs-filter-chip.active {
+  background: var(--cs-primary);
+  border-color: var(--cs-primary);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   1. GRAMMAR PRACTICE STYLES
+   ========================================================================== */
+.cs-grammar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.cs-question-box {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.cs-question-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cs-q-topic-tag {
+  color: var(--cs-secondary);
+}
+
+.cs-q-num {
+  color: var(--cs-text-muted);
+}
+
+.cs-question-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--cs-text-main);
+  margin: 0 0 1rem;
+  line-height: 1.45;
+}
+
+.cs-options-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.cs-option-btn {
+  background: #ffffff;
+  border: 1.5px solid var(--cs-border);
+  border-radius: var(--cs-radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--cs-text-body);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cs-option-btn:hover:not(:disabled) {
+  border-color: var(--cs-primary);
+  background: var(--cs-primary-light);
+  color: var(--cs-primary);
+}
+
+.cs-option-btn.correct {
+  background: #ecfdf5;
+  border-color: var(--cs-accent);
+  color: #047857;
+  font-weight: 700;
+}
+
+.cs-option-btn.incorrect {
+  background: #fef2f2;
+  border-color: var(--cs-danger);
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.cs-explanation-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--cs-radius-sm);
+  padding: 0.85rem 1.1rem;
+  margin-top: 0.85rem;
+  font-size: 0.88rem;
+  color: #1e40af;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. VOCABULARY STYLES
+   ========================================================================== */
+.cs-vocab-search-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.cs-vocab-input {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border-radius: var(--cs-radius-sm);
+  border: 1px solid var(--cs-border);
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.cs-vocab-input:focus {
+  border-color: var(--cs-primary);
+}
+
+.cs-vocab-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.1rem;
+}
+
+.cs-vocab-card {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--cs-shadow-sm);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.cs-vocab-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cs-shadow-md);
+  border-color: #cbd5e1;
+}
+
+.cs-vocab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.cs-vocab-word {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--cs-primary);
+  margin: 0;
+}
+
+.cs-vocab-pos {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--cs-text-muted);
+}
+
+.cs-vocab-meaning {
+  font-size: 0.92rem;
+  color: var(--cs-text-body);
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+}
+
+.cs-vocab-example {
+  background: var(--cs-bg);
+  border-left: 3px solid var(--cs-secondary);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.85rem;
+  color: #475569;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.cs-vocab-pairs {
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cs-vocab-pair-item strong {
+  color: var(--cs-text-main);
+}
+
+/* ==========================================================================
+   3. SENTENCE FORMATION STYLES
+   ========================================================================== */
+.cs-scramble-box {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cs-scramble-hint {
+  font-size: 0.88rem;
+  color: var(--cs-text-muted);
+  margin-bottom: 1rem;
+}
+
+.cs-chips-pool {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  min-height: 44px;
+  padding: 0.5rem;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: var(--cs-radius-sm);
+}
+
+.cs-word-chip {
+  background: var(--cs-secondary-light);
+  border: 1px solid #ddd6fe;
+  color: var(--cs-secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cs-word-chip:hover {
+  background: #ede9fe;
+  transform: translateY(-1px);
+}
+
+.cs-sentence-dropzone {
+  min-height: 52px;
+  background: #ffffff;
+  border: 2px solid var(--cs-border);
+  border-radius: var(--cs-radius-sm);
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cs-dropzone-placeholder {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.cs-scramble-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* ==========================================================================
+   4. READING PRACTICE STYLES
+   ========================================================================== */
+.cs-passage-wrapper {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.cs-passage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cs-passage-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cs-text-main);
+  margin: 0;
+}
+
+.cs-passage-meta {
+  font-size: 0.82rem;
+  color: var(--cs-text-muted);
+}
+
+.cs-passage-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--cs-text-body);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   5. WRITING PRACTICE STYLES
+   ========================================================================== */
+.cs-writing-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.cs-writing-prompt-box {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cs-writing-prompt-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--cs-text-main);
+  margin: 0 0 0.5rem;
+}
+
+.cs-writing-prompt-desc {
+  font-size: 0.9rem;
+  color: var(--cs-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cs-writing-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 220px;
+  border-radius: var(--cs-radius-sm);
+  border: 1px solid var(--cs-border);
+  padding: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  color: var(--cs-text-main);
+}
+
+.cs-writing-textarea:focus {
+  border-color: var(--cs-primary);
+}
+
+.cs-writing-stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--cs-text-muted);
+}
+
+.cs-writing-feedback-card {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.cs-feedback-header {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cs-text-main);
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cs-feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cs-feedback-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+}
+
+.cs-feedback-item.success {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.cs-feedback-item.tip {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.cs-model-answer-box {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: var(--cs-radius-sm);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+
+.cs-model-answer-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cs-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.cs-model-answer-text {
+  font-size: 0.9rem;
+  color: var(--cs-text-body);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* ==========================================================================
+   6. SPEAKING PRACTICE (Web Speech & Audio) STYLES
+   ========================================================================== */
+.cs-speaking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.cs-speaking-card {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.5rem;
+}
+
+.cs-topic-selector-select {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: var(--cs-radius-sm);
+  border: 1px solid var(--cs-border);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cs-text-main);
+  margin-bottom: 1.25rem;
+  outline: none;
+  background: #ffffff;
+}
+
+.cs-speaking-prompt-box {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius-sm);
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.cs-speaking-prompt-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--cs-text-main);
+  margin: 0 0 0.5rem;
+}
+
+.cs-speaking-prompt-guide {
+  font-size: 0.88rem;
+  color: var(--cs-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cs-expected-answer-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--cs-radius-sm);
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.25rem;
+}
+
+.cs-expected-answer-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.cs-expected-answer-text {
+  font-size: 0.92rem;
+  color: #1e3a8a;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Recording Controls */
+.cs-recording-controls-box {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius-sm);
+  padding: 1.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cs-recording-status-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cs-recording-pulse {
+  width: 14px;
+  height: 14px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: csPulse 1.2s infinite;
+}
+
+@keyframes csPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.cs-btn-mic-start {
+  background: linear-gradient(135deg, #e0259b, #be185d);
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--cs-radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(224, 37, 155, 0.35);
+  transition: all 0.2s ease;
+}
+
+.cs-btn-mic-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(224, 37, 155, 0.45);
+}
+
+.cs-btn-mic-stop {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--cs-radius-pill);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+.cs-unsupported-msg {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 0.75rem 1rem;
+  border-radius: var(--cs-radius-sm);
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+/* Audio Player and Result Section */
+.cs-speaking-result-card {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.5rem;
+  box-shadow: var(--cs-shadow-sm);
+}
+
+.cs-audio-player-box {
+  background: var(--cs-bg);
+  border-radius: var(--cs-radius-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.cs-audio-player-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cs-text-main);
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cs-audio-player-box audio {
+  width: 100%;
+  height: 40px;
+  outline: none;
+}
+
+.cs-audio-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.cs-transcript-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--cs-radius-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.cs-transcript-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cs-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.cs-transcript-text {
+  font-size: 0.98rem;
+  color: var(--cs-text-main);
+  line-height: 1.6;
+  margin: 0;
+  font-style: normal;
+}
+
+.cs-transcript-empty {
+  color: #94a3b8;
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+/* Speaking Feedback Summary Box */
+.cs-speech-feedback-box {
+  border-top: 1px solid var(--cs-border);
+  padding-top: 1.15rem;
+}
+
+.cs-feedback-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.cs-feedback-stat-item {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius-sm);
+  padding: 0.65rem;
+  text-align: center;
+}
+
+.cs-feedback-stat-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cs-primary);
+  display: block;
+}
+
+.cs-feedback-stat-lbl {
+  font-size: 0.72rem;
+  color: var(--cs-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ==========================================================================
+   7. WORKPLACE COMMUNICATION STYLES
+   ========================================================================== */
+.cs-workplace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.cs-workplace-card {
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 1.35rem 1.5rem;
+  box-shadow: var(--cs-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.cs-workplace-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cs-shadow-md);
+  border-color: #cbd5e1;
+}
+
+.cs-wp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.cs-wp-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.cs-wp-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--cs-text-main);
+  margin: 0;
+}
+
+.cs-wp-desc {
+  font-size: 0.88rem;
+  color: var(--cs-text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.45;
+}
+
+.cs-phrase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cs-phrase-item {
+  background: var(--cs-bg);
+  border-left: 3px solid var(--cs-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.88rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* Common Generic Buttons */
+.cs-btn-primary {
+  background: linear-gradient(135deg, var(--cs-primary), var(--cs-secondary));
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--cs-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cs-btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.cs-btn-outline {
+  background: #ffffff;
+  color: var(--cs-text-body);
+  border: 1px solid var(--cs-border);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--cs-radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cs-btn-outline:hover {
+  background: var(--cs-bg);
+  border-color: #cbd5e1;
+}
+
+/* Responsive Rules */
+@media (max-width: 900px) {
+  .cs-writing-layout,
+  .cs-speaking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-options-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-hero-banner {
+    padding: 1.5rem;
+  }
+
+  .cs-hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .cs-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .cs-feedback-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

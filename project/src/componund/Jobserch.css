@@ -1,8 +1,4 @@
-/* ==========================================================================
-   Jobserch.css - Professional 3-Section Learning Layout for CareerCraft
-   ========================================================================== */
 
-/* Fixed root container to prevent window-level scrollbars */
 .jobsearch-root {
   position: fixed;
   top: 0;
